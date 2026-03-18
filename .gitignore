@@ -4,4 +4,10 @@ local/
 /src/include/core/config.h
 /CMakeLists.txt.user
 external/libs/boost/include/boost/
-
+out-watch/
+*.apk
+*.aab
+*.jks
+*.keystore
+keystore/
+**/keystore.properties

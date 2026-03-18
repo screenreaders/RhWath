@@ -4,8 +4,31 @@ ext.myDataDir = file("../../../data")
 ext.myLanguagesDir = new File(myDataDir, "languages")
 ext.myVoicesDir = new File(myDataDir, "voices")
 ext.myExcludedNames = ["CMakeLists.txt"]
-ext.myLanguageNames = myLanguagesDir.list() - myExcludedNames
-ext.myVoiceNames = myVoicesDir.list() - myExcludedNames
+
+def readNameFilter(String propName) {
+    if (!project.hasProperty(propName)) {
+        return null
+    }
+    def raw = project.property(propName).toString()
+    def items = raw.split(",").collect { it.trim() }.findAll { it }
+    return items.isEmpty() ? null : items
+}
+
+def allLanguageNames = myLanguagesDir.list() - myExcludedNames
+def allVoiceNames = myVoicesDir.list() - myExcludedNames
+def languageFilter = readNameFilter("RHVoice.languages")
+def voiceFilter = readNameFilter("RHVoice.voices")
+
+ext.myLanguageNames = languageFilter ? allLanguageNames.findAll { languageFilter.contains(it) } : allLanguageNames
+ext.myVoiceNames = voiceFilter ? allVoiceNames.findAll { voiceFilter.contains(it) } : allVoiceNames
+
+if (languageFilter && myLanguageNames.isEmpty()) {
+    throw new GradleException("RHVoice.languages did not match any directories under data/languages: " + languageFilter)
+}
+
+if (voiceFilter && myVoiceNames.isEmpty()) {
+    throw new GradleException("RHVoice.voices did not match any directories under data/voices: " + voiceFilter)
+}
 
 def getDataItemSpec(type, baseDir, dirName) {
     def spec = ["type": type, "dirName": dirName]
@@ -39,7 +62,7 @@ def getDataItemSpec(type, baseDir, dirName) {
     spec["versionName"] = "${spec['format']}.${spec['revision']}"
     spec["package"] = "com.github.olga_yakovleva.rhvoice.android.${type}.${spec['id'].toLowerCase()}"
     spec["flavor"] = type.equals("voice") ? "voice-${spec['language']}-${spec['file_name']}" : "language-${spec['file_name']}"
-    spec["appName"] = type.equals("voice") ? "RHVoice ${spec['display_language']} ${spec['display_name']}" : "RHVoice ${spec['display_name']}"
+    spec["appName"] = type.equals("voice") ? "rhvoice-${spec['display_name']}" : "RHVoice ${spec['display_name']}"
     spec["task"] = "pack_${type}_${spec['id']}"
     return spec
 }

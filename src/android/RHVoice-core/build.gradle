@@ -37,11 +37,11 @@ android {
         applicationId "com.github.olga_yakovleva.rhvoice.android"
         versionName "${major_version}.${minor_version}.${revision_number}"
         ndk {
-            abiFilters 'armeabi-v7a', 'x86', 'arm64-v8a', 'x86_64'
+            abiFilters 'arm64-v8a'
         }
         externalNativeBuild {
             ndkBuild {
-                arguments 'V=1'
+                arguments 'V=1', '-j1'
                 cppFlags = ['-fexceptions', '-frtti', '-std=c++11']
             }
         }

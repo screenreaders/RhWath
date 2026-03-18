@@ -15,10 +15,10 @@ allprojects {
         mavenCentral()
     }
 
-    ext.myMinSdkVersion = 19
+    ext.myMinSdkVersion = 21
     ext.myCompileSdkVersion = 35
     ext.myBuildToolsVersion = '35.0.0'
-    ext.myNdkVersion = '25.1.8937393'
+    ext.myNdkVersion = '27.1.12297006'
     ext.myTargetSdkVersion = 33
 }
 
