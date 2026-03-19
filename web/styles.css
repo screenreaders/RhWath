@@ -291,13 +291,6 @@ a:focus-visible {
   margin: 0 0 12px;
 }
 
-.download-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-bottom: 24px;
-}
-
 .grid {
   display: grid;
   gap: 18px;
