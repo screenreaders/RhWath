@@ -207,6 +207,16 @@ h1 {
   color: var(--muted);
 }
 
+.steps a {
+  color: var(--accent-strong);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.steps a:hover {
+  border-bottom-color: var(--accent-strong);
+}
+
 .panel__note {
   background: rgba(210, 106, 46, 0.1);
   border-radius: 12px;
@@ -243,6 +253,13 @@ h1 {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+}
+
+.download-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
 }
 
 .grid {

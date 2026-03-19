@@ -1,15 +1,15 @@
 TEST RHVoice NA ZEGARKU (Wear OS) - KROK PO KROKU
 
-1) Wlacz opcje programistyczne na zegarku
+1) Włącz opcje programistyczne na zegarku
 - Ustawienia -> Informacje o zegarku -> Informacje o oprogramowaniu
 - Stuknij "Numer kompilacji" 7 razy
-- Wroc do Ustawienia -> Opcje programistyczne
+- Wróć do Ustawień -> Opcje programistyczne
 
-2) Wlacz debugowanie ADB
-- Opcje programistyczne -> ADB debugging (wlacz)
-- Wlacz Wireless debugging / Debugowanie przez Wi-Fi
+2) Włącz debugowanie ADB
+- Opcje programistyczne -> ADB debugging (włącz)
+- Włącz Wireless debugging / Debugowanie przez Wi-Fi
 
-3) Polacz ADB z zegarkiem
+3) Połącz ADB z zegarkiem
 Wersja A (parowanie):
 - Wireless debugging -> Pair new device
 - Na komputerze:
@@ -24,20 +24,20 @@ Wersja B (starsze debugowanie Wi-Fi):
   adb connect IP:5555
   adb devices
 
-4) Zainstaluj APK (uruchom w folderze z pobranymi plikami lub podaj pelna sciezke)
+4) Zainstaluj APK (uruchom w folderze z pobranymi plikami lub podaj pełną ścieżkę)
 adb install -r rhvoice-core.apk
 adb install -r rhvoice-Polish.apk
 adb install -r rhvoice-Cezary.apk
 
-5) Ustaw RHVoice jako domyslny TTS
-- Ustawienia -> Ulatwienia dostepu -> Syntezator mowy
-  albo: Ustawienia -> System -> Jezyki i wprowadzanie -> Syntezator mowy
+5) Ustaw RHVoice jako domyślny TTS
+- Ustawienia -> Ułatwienia dostępu -> Syntezator mowy
+  albo: Ustawienia -> System -> Języki i wprowadzanie -> Syntezator mowy
 - Wybierz RHVoice
-- Ustaw jezyk Polski i glos Cezary
+- Ustaw język Polski i głos Cezary
 
-6) Test dzwieku
-- W ustawieniach TTS kliknij "Odtworz przyklad"
-- Jesli slychac glos Cezarego - dziala
+6) Test dźwięku
+- W ustawieniach TTS kliknij "Odtwórz przykład"
+- Jeśli słychać głos Cezarego - działa
 
-7) Logi (gdyby byly problemy)
+7) Logi (gdyby były problemy)
 adb logcat | grep -i rhvoice
