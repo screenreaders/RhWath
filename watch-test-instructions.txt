@@ -44,7 +44,7 @@ adb logcat | grep -i rhvoice
 
 8) Watch Volume (pomocnicza aplikacja do głośności)
 - Zainstaluj: adb install -r watch-volume.apk
-- Otworz aplikacje na zegarku i wybierz tryb: Dostepnosc lub Multimedia
-- Jesli potrzebujesz, przelacz profil: Domyslny / Jieshuo
-- Przypisz przyciski: wybierz \"Przypisz glosniej/ciszej\" lub \"Przypisz przelacz tryb\" i nacisnij przycisk
-- Zmieniaj glosnosc pokretlem, przyciskami lub przyciskami ekranowymi
+- Otwórz aplikację na zegarku i wybierz tryb: Dostępność lub Multimedia
+- Jeśli potrzebujesz, przełącz profil: Domyślny / Jieshuo
+- Przypisz przyciski: wybierz "Przypisz głośniej/ciszej" lub "Przypisz przełącz tryb" i naciśnij przycisk
+- Zmieniaj głośność pokrętłem, przyciskami lub przyciskami ekranowymi
