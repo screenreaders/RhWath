@@ -26,7 +26,11 @@ $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 $shouldCount = ($method === 'GET');
 
 if ($shouldCount) {
-    $dataDir = __DIR__ . '/.data';
+    $dataDir = getenv('RHVOICE_DATA_DIR');
+    if ($dataDir === false || $dataDir === '') {
+        $dataDir = dirname(__DIR__) . '/.rhvoice-data';
+    }
+    $dataDir = rtrim($dataDir, '/');
     if (!is_dir($dataDir)) {
         @mkdir($dataDir, 0755, true);
     }

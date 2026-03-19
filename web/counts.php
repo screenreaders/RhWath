@@ -9,7 +9,11 @@ $allowed = [
     'rhvoice-Natan.apk',
 ];
 
-$dataDir = __DIR__ . '/.data';
+$dataDir = getenv('RHVOICE_DATA_DIR');
+if ($dataDir === false || $dataDir === '') {
+    $dataDir = dirname(__DIR__) . '/.rhvoice-data';
+}
+$dataDir = rtrim($dataDir, '/');
 $countsFile = $dataDir . '/download-counts.json';
 $counts = [];
 

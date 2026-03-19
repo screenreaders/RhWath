@@ -12,3 +12,4 @@ external/libs/boost/include/boost/
 *.keystore
 keystore/
 **/keystore.properties
+web/.data/
