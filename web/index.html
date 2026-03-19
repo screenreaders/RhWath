@@ -14,6 +14,7 @@
   </head>
   <body>
     <div class="noise"></div>
+    <a class="skip-link" href="#main">Przejdź do treści</a>
     <header class="hero">
       <div class="wrap">
         <div class="hero__grid">
@@ -24,10 +25,10 @@
               Lekki silnik TTS dla zegarków. Pobierz APK, przeczytaj instrukcję i
               uruchom głos na Samsung Galaxy Watch 8 Classic.
             </p>
-            <div class="hero__actions">
+            <nav class="hero__actions" aria-label="Skróty nawigacyjne">
               <a class="btn" href="#downloads">Pobierz APK</a>
               <a class="btn btn--ghost" href="#instrukcja">Instrukcja</a>
-            </div>
+            </nav>
             <div class="hero__meta">
               <div class="meta-card">
                 <span class="meta-label">Docelowe urządzenie</span>
@@ -70,7 +71,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main">
       <section id="downloads" class="section">
         <div class="wrap">
           <div class="section__head">
@@ -169,22 +170,49 @@
               </a>
             </div>
           </div>
-          <div class="download-actions">
-            <a class="btn btn--small" href="downloads/rhvoice-core.apk" download>
+          <h3 class="subhead">Szybkie pobrania</h3>
+          <div class="download-actions" aria-label="Szybkie pobrania">
+            <a
+              class="btn btn--small"
+              href="downloads/rhvoice-core.apk"
+              download
+              aria-label="Pobierz RHVoice Core (APK)"
+            >
               Pobierz core
             </a>
-            <a class="btn btn--small" href="downloads/rhvoice-Polish.apk" download>
+            <a
+              class="btn btn--small"
+              href="downloads/rhvoice-Polish.apk"
+              download
+              aria-label="Pobierz język Polski (APK)"
+            >
               Pobierz język PL
             </a>
-            <a class="btn btn--small" href="downloads/rhvoice-Cezary.apk" download>
+            <a
+              class="btn btn--small"
+              href="downloads/rhvoice-Cezary.apk"
+              download
+              aria-label="Pobierz głos Cezary (APK)"
+            >
               Pobierz głos Cezary
             </a>
-            <a class="btn btn--small" href="downloads/rhvoice-Alicja.apk" download>
+            <a
+              class="btn btn--small"
+              href="downloads/rhvoice-Alicja.apk"
+              download
+              aria-label="Pobierz głos Alicja (APK)"
+            >
               Pobierz głos Alicja
             </a>
           </div>
+          <h3 class="subhead">Instrukcja krok po kroku</h3>
           <div class="instructions">
-            <div class="instructions__status" id="instructionStatus">
+            <div
+              class="instructions__status"
+              id="instructionStatus"
+              role="status"
+              aria-live="polite"
+            >
               Ładuje instrukcje...
             </div>
             <pre class="instructions__pre" id="instructionText"></pre>
