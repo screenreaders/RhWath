@@ -7,6 +7,7 @@ $allowed = [
     'rhvoice-Magda.apk',
     'rhvoice-Michal.apk',
     'rhvoice-Natan.apk',
+    'watch-volume.apk',
 ];
 
 $dataDir = getenv('RHVOICE_DATA_DIR');

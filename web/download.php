@@ -7,6 +7,7 @@ $allowed = [
     'rhvoice-Magda.apk',
     'rhvoice-Michal.apk',
     'rhvoice-Natan.apk',
+    'watch-volume.apk',
 ];
 
 $file = isset($_GET['file']) ? basename((string) $_GET['file']) : '';
