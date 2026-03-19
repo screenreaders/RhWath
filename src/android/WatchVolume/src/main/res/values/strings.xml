@@ -20,4 +20,8 @@
     <string name="label_down">Ciszej: %1$s</string>
     <string name="label_toggle">Przelacz tryb: %1$s</string>
     <string name="key_unassigned">brak</string>
+    <string name="profile_title">Profil</string>
+    <string name="profile_default">Domyslny</string>
+    <string name="profile_jieshuo">Jieshuo</string>
+    <string name="profile_switch">Zmien profil</string>
 </resources>

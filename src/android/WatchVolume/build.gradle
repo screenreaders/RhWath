@@ -13,8 +13,8 @@ android {
         applicationId "eu.asteja.watchvolume"
         minSdk rootProject.ext.myMinSdkVersion
         targetSdk rootProject.ext.myTargetSdkVersion
-        versionCode 2
-        versionName "1.1"
+        versionCode 3
+        versionName "1.2"
     }
 
     if (rootProject.signRelease) {

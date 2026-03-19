@@ -15,9 +15,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     private static final String PREFS = "watch_volume_prefs";
+    private static final String PREF_PROFILE = "profile_id";
     private static final String PREF_KEY_UP = "key_up";
     private static final String PREF_KEY_DOWN = "key_down";
     private static final String PREF_KEY_TOGGLE = "key_toggle";
+
+    private static final int PROFILE_DEFAULT = 0;
+    private static final int PROFILE_JIESHUO = 1;
 
     private static final int ACTION_NONE = 0;
     private static final int ACTION_ASSIGN_UP = 1;
@@ -27,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private AudioManager audioManager;
     private SharedPreferences prefs;
     private int currentStream = AudioManager.STREAM_ACCESSIBILITY;
+    private int currentProfile = PROFILE_DEFAULT;
 
     private int keyUp;
     private int keyDown;
@@ -39,7 +44,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView keyDownLabel;
     private TextView keyToggleLabel;
     private TextView assignStatus;
+    private TextView profileLabel;
     private Button toggleButton;
+    private Button profileSwitchButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         keyDownLabel = findViewById(R.id.keyDownLabel);
         keyToggleLabel = findViewById(R.id.keyToggleLabel);
         assignStatus = findViewById(R.id.assignStatus);
+        profileLabel = findViewById(R.id.profileLabel);
+        profileSwitchButton = findViewById(R.id.profileSwitchButton);
 
         Button assignUpButton = findViewById(R.id.assignUpButton);
         Button assignDownButton = findViewById(R.id.assignDownButton);
@@ -70,10 +79,12 @@ public class MainActivity extends AppCompatActivity {
         assignDownButton.setOnClickListener(v -> beginAssign(ACTION_ASSIGN_DOWN));
         assignToggleButton.setOnClickListener(v -> beginAssign(ACTION_ASSIGN_TOGGLE));
         resetButton.setOnClickListener(v -> resetAssignments());
+        profileSwitchButton.setOnClickListener(v -> switchProfile());
 
         View root = findViewById(R.id.root);
         root.setOnGenericMotionListener((v, event) -> handleRotary(event));
 
+        currentProfile = prefs.getInt(PREF_PROFILE, PROFILE_DEFAULT);
         loadAssignments();
         updateUi();
     }
@@ -84,23 +95,27 @@ public class MainActivity extends AppCompatActivity {
         updateUi();
     }
 
+    private String keyName(String baseKey) {
+        return "p" + currentProfile + "_" + baseKey;
+    }
+
     private void loadAssignments() {
-        keyUp = prefs.getInt(PREF_KEY_UP, KeyEvent.KEYCODE_STEM_1);
-        keyDown = prefs.getInt(PREF_KEY_DOWN, KeyEvent.KEYCODE_STEM_2);
-        keyToggle = prefs.getInt(PREF_KEY_TOGGLE, KeyEvent.KEYCODE_STEM_3);
+        keyUp = prefs.getInt(keyName(PREF_KEY_UP), KeyEvent.KEYCODE_STEM_1);
+        keyDown = prefs.getInt(keyName(PREF_KEY_DOWN), KeyEvent.KEYCODE_STEM_2);
+        keyToggle = prefs.getInt(keyName(PREF_KEY_TOGGLE), KeyEvent.KEYCODE_STEM_3);
     }
 
     private void saveAssignment(int action, int keyCode) {
         SharedPreferences.Editor editor = prefs.edit();
         if (action == ACTION_ASSIGN_UP) {
             keyUp = keyCode;
-            editor.putInt(PREF_KEY_UP, keyCode);
+            editor.putInt(keyName(PREF_KEY_UP), keyCode);
         } else if (action == ACTION_ASSIGN_DOWN) {
             keyDown = keyCode;
-            editor.putInt(PREF_KEY_DOWN, keyCode);
+            editor.putInt(keyName(PREF_KEY_DOWN), keyCode);
         } else if (action == ACTION_ASSIGN_TOGGLE) {
             keyToggle = keyCode;
-            editor.putInt(PREF_KEY_TOGGLE, keyCode);
+            editor.putInt(keyName(PREF_KEY_TOGGLE), keyCode);
         }
         editor.apply();
     }
@@ -110,9 +125,9 @@ public class MainActivity extends AppCompatActivity {
         keyDown = KeyEvent.KEYCODE_STEM_2;
         keyToggle = KeyEvent.KEYCODE_STEM_3;
         prefs.edit()
-            .putInt(PREF_KEY_UP, keyUp)
-            .putInt(PREF_KEY_DOWN, keyDown)
-            .putInt(PREF_KEY_TOGGLE, keyToggle)
+            .putInt(keyName(PREF_KEY_UP), keyUp)
+            .putInt(keyName(PREF_KEY_DOWN), keyDown)
+            .putInt(keyName(PREF_KEY_TOGGLE), keyToggle)
             .apply();
         captureAction = ACTION_NONE;
         updateUi();
@@ -120,6 +135,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void beginAssign(int action) {
         captureAction = action;
+        updateUi();
+    }
+
+    private void switchProfile() {
+        currentProfile = (currentProfile == PROFILE_DEFAULT) ? PROFILE_JIESHUO : PROFILE_DEFAULT;
+        prefs.edit().putInt(PREF_PROFILE, currentProfile).apply();
+        captureAction = ACTION_NONE;
+        loadAssignments();
         updateUi();
     }
 
@@ -151,6 +174,11 @@ public class MainActivity extends AppCompatActivity {
         modeText.setText(modeLabel);
         statusText.setText(getString(R.string.volume_status, volume, max));
         toggleButton.setText(toggleLabel);
+
+        String profileName = (currentProfile == PROFILE_DEFAULT)
+            ? getString(R.string.profile_default)
+            : getString(R.string.profile_jieshuo);
+        profileLabel.setText(getString(R.string.profile_title) + ": " + profileName);
 
         keyUpLabel.setText(getString(R.string.label_up, keyLabel(keyUp)));
         keyDownLabel.setText(getString(R.string.label_down, keyLabel(keyDown)));
