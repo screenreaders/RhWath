@@ -27,6 +27,7 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/$(MY_INCLUDE_DIR) $(LOCAL_PATH)/$(MY_UTF8_DIR)
 LOCAL_SRC_FILES := $(patsubst $(LOCAL_PATH)/%, %, $(filter-out $(LOCAL_PATH)/$(MY_CORE_DIR)/unidata.cpp $(LOCAL_PATH)/$(MY_CORE_DIR)/emoji_data.cpp, $(wildcard $(LOCAL_PATH)/$(MY_CORE_DIR)/*.cpp)))
 LOCAL_SRC_FILES += $(patsubst $(LOCAL_PATH)/%, %, $(wildcard $(LOCAL_PATH)/$(MY_PKG_DIR)/*.cpp))
 LOCAL_CFLAGS := $(MY_CORE_DEFINES) $(MY_COMMON_DEFINES)
+LOCAL_CPPFLAGS := -Wno-enum-constexpr-conversion
 LOCAL_EXPORT_C_INCLUDES := $(LOCAL_C_INCLUDES)
 LOCAL_STATIC_LIBRARIES := curl_static
 include $(BUILD_STATIC_LIBRARY)
