@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RHVoice Watch - instrukcja i pobrania</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:wght@400;500&family=Space+Grotesk:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="hero">
+      <div class="wrap">
+        <div class="hero__grid">
+          <div class="hero__text">
+            <span class="badge">Wear OS</span>
+            <h1>RHVoice Watch</h1>
+            <p class="lead">
+              Lekki silnik TTS dla zegarkow. Pobierz APK, przeczytaj instrukcje i
+              uruchom glos na Samsung Galaxy Watch 8 Classic.
+            </p>
+            <div class="hero__actions">
+              <a class="btn" href="#downloads">Pobierz APK</a>
+              <a class="btn btn--ghost" href="#instrukcja">Instrukcja</a>
+            </div>
+            <div class="hero__meta">
+              <div class="meta-card">
+                <span class="meta-label">Docelowe urzadzenie</span>
+                <span class="meta-value">Galaxy Watch 8 Classic</span>
+              </div>
+              <div class="meta-card">
+                <span class="meta-label">Architektura</span>
+                <span class="meta-value">arm64-v8a</span>
+              </div>
+              <div class="meta-card">
+                <span class="meta-label">APK</span>
+                <span class="meta-value">Podpisane cyfrowo</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero__panel">
+            <div class="panel">
+              <h2>Szybki start</h2>
+              <ol class="steps">
+                <li>Zainstaluj `rhvoice-core.apk`</li>
+                <li>Zainstaluj `rhvoice-Polish.apk`</li>
+                <li>Wybierz glos (np. `rhvoice-Cezary.apk`)</li>
+                <li>Ustaw RHVoice jako domyslny TTS</li>
+              </ol>
+              <div class="panel__note">
+                ADB jest wymagane do instalacji na zegarku. Szczegoly nizej.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="downloads" class="section">
+        <div class="wrap">
+          <div class="section__head">
+            <h2>Pliki do pobrania</h2>
+            <p>
+              Najpierw zainstaluj core i dane jezyka, potem wybrany glos. Pliki
+              podpisane i gotowe do instalacji.
+            </p>
+          </div>
+          <div class="grid">
+            <article class="card card--wide">
+              <div class="card__body">
+                <h3>RHVoice Core</h3>
+                <p>Silnik TTS dla Wear OS. Wymagany.</p>
+                <div class="card__meta">~11.0 MB</div>
+              </div>
+              <a class="btn btn--small" href="downloads/rhvoice-core.apk" download>
+                rhvoice-core.apk
+              </a>
+            </article>
+            <article class="card">
+              <div class="card__body">
+                <h3>Jezyk Polski</h3>
+                <p>Dane jezykowe. Wymagane.</p>
+                <div class="card__meta">~1.2 MB</div>
+              </div>
+              <a class="btn btn--small" href="downloads/rhvoice-Polish.apk" download>
+                rhvoice-Polish.apk
+              </a>
+            </article>
+            <article class="card">
+              <div class="card__body">
+                <h3>Glos Cezary</h3>
+                <p>Glos meski, wyrazny.</p>
+                <div class="card__meta">~11.0 MB</div>
+              </div>
+              <a class="btn btn--small" href="downloads/rhvoice-Cezary.apk" download>
+                rhvoice-Cezary.apk
+              </a>
+            </article>
+            <article class="card">
+              <div class="card__body">
+                <h3>Glos Alicja</h3>
+                <p>Glos zenski, naturalny.</p>
+                <div class="card__meta">~7.4 MB</div>
+              </div>
+              <a class="btn btn--small" href="downloads/rhvoice-Alicja.apk" download>
+                rhvoice-Alicja.apk
+              </a>
+            </article>
+            <article class="card">
+              <div class="card__body">
+                <h3>Glos Magda</h3>
+                <p>Glos zenski, cieply.</p>
+                <div class="card__meta">~9.5 MB</div>
+              </div>
+              <a class="btn btn--small" href="downloads/rhvoice-Magda.apk" download>
+                rhvoice-Magda.apk
+              </a>
+            </article>
+            <article class="card">
+              <div class="card__body">
+                <h3>Glos Michal</h3>
+                <p>Glos meski, neutralny.</p>
+                <div class="card__meta">~5.6 MB</div>
+              </div>
+              <a class="btn btn--small" href="downloads/rhvoice-Michal.apk" download>
+                rhvoice-Michal.apk
+              </a>
+            </article>
+            <article class="card">
+              <div class="card__body">
+                <h3>Glos Natan</h3>
+                <p>Glos meski, dynamiczny.</p>
+                <div class="card__meta">~7.2 MB</div>
+              </div>
+              <a class="btn btn--small" href="downloads/rhvoice-Natan.apk" download>
+                rhvoice-Natan.apk
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="instrukcja" class="section section--alt">
+        <div class="wrap">
+          <div class="section__head">
+            <h2>Instrukcja instalacji</h2>
+            <p>
+              Ponizej pelna instrukcja testu na zegarku. Mozesz tez pobrac plik
+              tekstowy.
+            </p>
+            <div class="section__actions">
+              <a class="btn btn--ghost btn--small" href="instructions.txt" download>
+                Pobierz instrukcje (txt)
+              </a>
+            </div>
+          </div>
+          <div class="instructions">
+            <div class="instructions__status" id="instructionStatus">
+              Laduje instrukcje...
+            </div>
+            <pre class="instructions__pre" id="instructionText"></pre>
+            <noscript>
+              <p>
+                Wlacz JavaScript, aby zobaczyc instrukcje, albo pobierz plik:
+                <a href="instructions.txt" download>instructions.txt</a>.
+              </p>
+            </noscript>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="wrap">
+          <div class="section__head">
+            <h2>Wazne informacje</h2>
+          </div>
+          <div class="grid grid--note">
+            <article class="note">
+              <h3>Kolejnosc instalacji</h3>
+              <p>Core -> Polish -> wybrany glos. Bez core i danych jezyka glos nie ruszy.</p>
+            </article>
+            <article class="note">
+              <h3>Bezpieczne ADB</h3>
+              <p>Po testach wylacz ADB debugging w opcjach programistycznych.</p>
+            </article>
+            <article class="note">
+              <h3>Wydajnosc</h3>
+              <p>Wylacz nieuzywane glosy, aby oszczedzic pamiec i miejsce.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <div>
+          <strong>RHVoice Watch</strong>
+          <span>Wear OS TTS dla polskich glosow</span>
+        </div>
+        <div class="footer__meta">Zrodla i wydania w repozytorium projektu.</div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

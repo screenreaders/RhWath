@@ -6,6 +6,7 @@ local/
 external/libs/boost/include/boost/
 *.apk
 !out-watch/*.apk
+!web/downloads/*.apk
 *.aab
 *.jks
 *.keystore
