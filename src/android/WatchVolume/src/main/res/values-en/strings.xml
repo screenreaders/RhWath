@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Watch Volume</string>
+    <string name="title">Volume control</string>
+    <string name="mode_accessibility">Mode: Accessibility</string>
+    <string name="mode_media">Mode: Media</string>
+    <string name="toggle_to_media">Switch to Media</string>
+    <string name="toggle_to_accessibility">Switch to Accessibility</string>
+    <string name="vol_up">Volume up</string>
+    <string name="vol_down">Volume down</string>
+    <string name="volume_status">Volume: %1$d / %2$d</string>
+    <string name="hint">Crown, buttons, or screen: change volume</string>
+    <string name="assign_title">Button mapping</string>
+    <string name="assign_up">Assign volume up</string>
+    <string name="assign_down">Assign volume down</string>
+    <string name="assign_toggle">Assign toggle mode</string>
+    <string name="assign_reset">Reset mappings</string>
+    <string name="assign_ready">Press a button to assign it.</string>
+    <string name="assign_listen">Press a button now...</string>
+    <string name="label_up">Volume up: %1$s</string>
+    <string name="label_down">Volume down: %1$s</string>
+    <string name="label_toggle">Toggle mode: %1$s</string>
+    <string name="key_unassigned">none</string>
+    <string name="profile_title">Profile</string>
+    <string name="profile_default">Default</string>
+    <string name="profile_jieshuo">Jieshuo</string>
+    <string name="profile_switch">Switch profile</string>
+</resources>
