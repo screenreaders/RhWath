@@ -8,5 +8,16 @@
     <string name="vol_up">Glosniej</string>
     <string name="vol_down">Ciszej</string>
     <string name="volume_status">Glosnosc: %1$d / %2$d</string>
-    <string name="hint">Pokretlo lub przyciski zegarka: zmiana glosnosci</string>
+    <string name="hint">Pokretlo, przyciski lub ekran: zmiana glosnosci</string>
+    <string name="assign_title">Przypisania przyciskow</string>
+    <string name="assign_up">Przypisz glosniej</string>
+    <string name="assign_down">Przypisz ciszej</string>
+    <string name="assign_toggle">Przypisz przelacz tryb</string>
+    <string name="assign_reset">Resetuj przypisania</string>
+    <string name="assign_ready">Nacisnij przycisk, aby ustawic przypisanie.</string>
+    <string name="assign_listen">Nacisnij przycisk teraz...</string>
+    <string name="label_up">Glosniej: %1$s</string>
+    <string name="label_down">Ciszej: %1$s</string>
+    <string name="label_toggle">Przelacz tryb: %1$s</string>
+    <string name="key_unassigned">brak</string>
 </resources>
