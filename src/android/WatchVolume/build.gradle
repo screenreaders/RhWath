@@ -1,0 +1,41 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdk rootProject.ext.myCompileSdkVersion
+    buildToolsVersion rootProject.ext.myBuildToolsVersion
+    namespace "eu.asteja.watchvolume"
+
+    defaultConfig {
+        applicationId "eu.asteja.watchvolume"
+        minSdk rootProject.ext.myMinSdkVersion
+        targetSdk rootProject.ext.myTargetSdkVersion
+        versionCode 1
+        versionName "1.0"
+    }
+
+    if (rootProject.signRelease) {
+        signingConfigs {
+            release {
+                storeFile file(rootProject.property("RHVoice.keyStore"))
+                storePassword rootProject.property("RHVoice.keyStorePassword")
+                keyAlias rootProject.property("RHVoice.keyAlias")
+                keyPassword rootProject.property("RHVoice.keyPassword")
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            if (rootProject.signRelease) {
+                signingConfig signingConfigs.release
+            }
+            minifyEnabled false
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+}

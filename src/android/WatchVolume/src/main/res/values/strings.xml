@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Watch Volume</string>
+    <string name="title">Sterowanie glosnoscia</string>
+    <string name="mode_accessibility">Tryb: Dostepnosc</string>
+    <string name="mode_media">Tryb: Multimedia</string>
+    <string name="toggle_to_media">Przelacz na Multimedia</string>
+    <string name="toggle_to_accessibility">Przelacz na Dostepnosc</string>
+    <string name="vol_up">Glosniej</string>
+    <string name="vol_down">Ciszej</string>
+    <string name="volume_status">Glosnosc: %1$d / %2$d</string>
+    <string name="hint">Pokretlo lub przyciski zegarka: zmiana glosnosci</string>
+</resources>
