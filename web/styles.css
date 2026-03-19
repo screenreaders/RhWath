@@ -336,6 +336,12 @@ a:focus-visible {
   margin-top: 12px;
 }
 
+.card__count {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 .instructions {
   background: #fdf9f2;
   border-radius: 18px;
